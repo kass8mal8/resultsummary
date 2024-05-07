@@ -1,0 +1,128 @@
+@import './variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // font-family: $hankennormal;    
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 15%;
+    display: flex;
+    flex-flow: row;
+    box-shadow: 3px 3px 0 3px $pale-blue;
+    border-radius: 20px;
+
+    @include responsive('mobile') {
+        display: block;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    p {
+        font-family: $hankennormal;
+    }
+
+    .heading {
+        font-family: $hankenextrabold;
+    }
+
+    .result-card {
+        background: linear-gradient($lightslateblue, $lightroyalblue);
+        padding: 30px 20px;
+        color: $white;
+        text-align: center;
+        align-items: center;
+        width: 250px;
+        // border-radius: 20px;
+
+        @include responsive('desktop') {
+            border-radius: 20px;
+        }
+
+        @include responsive('mobile') {
+            width: 100%;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .circle {
+            background: linear-gradient($violet-blue, $persian-blue) ;
+            border-radius: 100%;
+            width:120px;
+            height: 120px;
+            padding: 10px;
+            margin: 30px auto 30px 20%;
+
+            @include responsive('mobile') {
+                margin-left:30% ;
+            }
+        }
+    }
+
+    .summary {
+        padding: 30px 40px;
+        margin-left: -20px;
+
+        @include responsive(mobile){
+            padding-left: 60px;
+            padding-top: 20px;
+
+        }
+
+        .btn {
+            text-transform: capitalize;
+            color: $white;
+            background: $darkgray-blue;
+            font-family: $hankennormal;
+            border-radius: 20px;
+        }
+
+        ul {
+            li {
+                list-style: none;
+                margin: 20px auto;
+                padding: 10px;
+                border-radius: 5px;
+
+                &:nth-of-type(3),  &:nth-of-type(4) {
+                    .scores {
+                        margin-left: 39%;
+                        width: 30%;
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    background: hsla(0, 100%, 67%, 10%);
+                }
+
+                &:nth-of-type(2) {
+                    background-color: hsla(39, 100%, 56%, 10%);
+                }
+
+                &:nth-of-type(3) {
+                    background-color: hsl(166, 100%, 37%, 10%);
+                }
+
+                &:nth-of-type(4) {
+                    background-color: hsl(234, 85%, 45%, 10%);
+                }
+            }
+        }
+
+        span {
+            font-family: $hankenbold;
+        }
+
+        .description {
+            align-items: center;
+        }
+    }
+}

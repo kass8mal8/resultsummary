@@ -1,0 +1,62 @@
+// colors
+
+// -- Primary --
+$light-red: hsl(0, 100%, 67%);
+$orange-yellow: hsl(39, 100%, 56%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
+
+// -- Gradient colors --
+$lightslateblue: hsl(252, 100%, 67%); // background
+$lightroyalblue: hsl(241, 81%, 54%); // background
+
+$violet-blue: hsla(256, 72%, 46%, 1); // circle
+$persian-blue: hsla(241, 72%, 46%, 0); //circle
+
+// Neutral colors
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$darkgray-blue: hsl(224, 30%, 27%);
+
+
+// Typography
+$fontSize: 18px;
+
+// Font
+
+@font-face {
+    font-family: hankensak;
+    src: url(../../assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: hankenbold;
+    src: url(../../assets/fonts/static/HankenGrotesk-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'hanken_extrabold';
+    src: url(../../assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+}
+
+
+$hankennormal: hankensak;
+$hankenbold: hankenbold;
+$hankenextrabold: hanken_extrabold;
+
+//responsive
+
+@mixin responsive($breakpoint) {
+    @if($breakpoint == 'mobile') {
+        @media screen and (max-width: '375px') {
+            @content
+        }
+    };
+
+    @if($breakpoint == 'desktop') {
+        @media screen and (min-width: '376px') {
+            @content
+        }
+    }
+}
