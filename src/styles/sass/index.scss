@@ -8,22 +8,21 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include responsive('desktop') {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 }
 
 .container {
-    margin-top: 15%;
-    display: flex;
-    flex-flow: row;
-    box-shadow: 3px 3px 0 3px $pale-blue;
-    border-radius: 20px;
 
-    @include responsive('mobile') {
-        display: block;
-        margin: 0;
-        box-shadow: none;
+    @include responsive('desktop') {
+        display: flex;
+        flex-flow: row;
+        box-shadow: 3px 3px 0 3px $pale-blue;
+        border-radius: 20px;
     }
 
     p {
@@ -49,8 +48,9 @@ body {
 
         @include responsive('mobile') {
             width: 100%;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            padding: 40px 70px;
         }
 
         .circle {
@@ -83,6 +83,11 @@ body {
             background: $darkgray-blue;
             font-family: $hankennormal;
             border-radius: 20px;
+
+            @include responsive('mobile') {
+                border-radius: 30px;
+                padding: 15px;
+            }
         }
 
         ul {
@@ -92,10 +97,22 @@ body {
                 padding: 10px;
                 border-radius: 5px;
 
+                @include responsive('mobile') {
+                    padding: 13px;
+
+                    .scores {
+                        margin-left: 45%;
+                    }
+                }
+
                 &:nth-of-type(3),  &:nth-of-type(4) {
                     .scores {
                         margin-left: 39%;
                         width: 30%;
+
+                        @include responsive('mobile') {
+                            margin-left: 50%;
+                        }
                     }
                 }
 

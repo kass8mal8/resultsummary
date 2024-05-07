@@ -49,13 +49,13 @@ $hankenextrabold: hanken_extrabold;
 
 @mixin responsive($breakpoint) {
     @if($breakpoint == 'mobile') {
-        @media screen and (max-width: '375px') {
+        @media screen and (max-width: '425px') {
             @content
         }
     };
 
     @if($breakpoint == 'desktop') {
-        @media screen and (min-width: '376px') {
+        @media screen and (min-width: '426px') {
             @content
         }
     }

@@ -16,24 +16,21 @@
   box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 426px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 }
 
-.container {
-  margin-top: 15%;
-  display: flex;
-  flex-flow: row;
-  box-shadow: 3px 3px 0 3px hsl(221, 100%, 96%);
-  border-radius: 20px;
-}
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 426px) {
   .container {
-    display: block;
-    margin: 0;
-    box-shadow: none;
+    display: flex;
+    flex-flow: row;
+    box-shadow: 3px 3px 0 3px hsl(221, 100%, 96%);
+    border-radius: 20px;
   }
 }
 .container p {
@@ -50,16 +47,17 @@ body {
   align-items: center;
   width: 250px;
 }
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 426px) {
   .container .result-card {
     border-radius: 20px;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .container .result-card {
     width: 100%;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    padding: 40px 70px;
   }
 }
 .container .result-card .circle {
@@ -70,7 +68,7 @@ body {
   padding: 10px;
   margin: 30px auto 30px 20%;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .container .result-card .circle {
     margin-left: 30%;
   }
@@ -79,7 +77,7 @@ body {
   padding: 30px 40px;
   margin-left: -20px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   .container .summary {
     padding-left: 60px;
     padding-top: 20px;
@@ -92,15 +90,34 @@ body {
   font-family: hankensak;
   border-radius: 20px;
 }
+@media screen and (max-width: 425px) {
+  .container .summary .btn {
+    border-radius: 30px;
+    padding: 15px;
+  }
+}
 .container .summary ul li {
   list-style: none;
   margin: 20px auto;
   padding: 10px;
   border-radius: 5px;
 }
+@media screen and (max-width: 425px) {
+  .container .summary ul li {
+    padding: 13px;
+  }
+  .container .summary ul li .scores {
+    margin-left: 45%;
+  }
+}
 .container .summary ul li:nth-of-type(3) .scores, .container .summary ul li:nth-of-type(4) .scores {
   margin-left: 39%;
   width: 30%;
+}
+@media screen and (max-width: 425px) {
+  .container .summary ul li:nth-of-type(3) .scores, .container .summary ul li:nth-of-type(4) .scores {
+    margin-left: 50%;
+  }
 }
 .container .summary ul li:nth-of-type(1) {
   background: hsla(0, 100%, 67%, 0.1);
